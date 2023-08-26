@@ -12,7 +12,7 @@ Restaurant finder is ... .
 
 ## Versions
 
-```
+```bash
 Flutter - 3.13.0
 Dart - 3.1.0
 Xcode - 14.3.1
@@ -35,7 +35,7 @@ flutter pub run flutter_launcher_icons
 ```
 
 ```sh
-3dart run build_runner build --delete-conflicting-outputs
+dart run build_runner build --delete-conflicting-outputs
 ```
 
 Generate splash screen

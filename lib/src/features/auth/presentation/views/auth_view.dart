@@ -5,7 +5,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../../core/consts/app_colors.dart';
 import '../../../../core/di/di.dart';
-import '../../../../core/utils/pop_up_modal.dart';
 import '../bloc/auth_bloc.dart';
 import '../widgets/inputs_area.dart';
 import '../widgets/login_button.dart';
@@ -59,6 +58,7 @@ class _AuthViewState extends State<AuthView> {
         ),
         child: Form(
           key: _formKey,
+          autovalidateMode: AutovalidateMode.onUserInteraction,
           child: SingleChildScrollView(
             child: Column(
               children: [
@@ -100,8 +100,6 @@ class _AuthViewState extends State<AuthView> {
           context: context,
         ),
       );
-    } else {
-      await popUp(context, error: 'authView.fillAllFields'.tr());
     }
   }
 
@@ -114,8 +112,6 @@ class _AuthViewState extends State<AuthView> {
           context: context,
         ),
       );
-    } else {
-      await popUp(context, error: 'authView.fillAllFields'.tr());
     }
   }
 }

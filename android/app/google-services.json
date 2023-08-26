@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "916337206610",
+    "project_id": "rest-finder-b2c0f",
+    "storage_bucket": "rest-finder-b2c0f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:916337206610:android:4bb1aba1f16403d0b3c68b",
+        "android_client_info": {
+          "package_name": "com.example.find_rest"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "916337206610-sufqklfh9959u8l5qu5jvcctv0r5ttt3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCGoSD6k5yI4J95YT5l78LlIHDIB8D8fHk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "916337206610-sufqklfh9959u8l5qu5jvcctv0r5ttt3.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "916337206610-roabej68ceivoirksepd8133f9mlslep.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.findRest"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,25 @@
+{
+  "keyword": {
+    "oops": "Oops something went wrong",
+    "ok": "OK"
+  },
+  "authView": {
+    "auth": "Авторизация",
+    "loginOrEmail": "Логин или почта",
+    "password":"Пароль",
+    "login": "Войти",
+    "registration": "Зарегистрироваться",
+    "pleaseEnterLogin": "Пожалуйса введите почту",
+    "pleaseEnterPassword": "Пожалуйса введите пароль",
+    "fillAllFields": "Пожалуйса заполните все поля"
+  },
+  "rootView": {
+    "tape": "Лента",
+    "map": "Карта",
+    "favorites":"Избранное",
+    "profile": "Профиль"
+  },
+  "profile": {
+    "logout": "Выйти"
+  }
+}

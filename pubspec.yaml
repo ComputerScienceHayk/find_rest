@@ -1,0 +1,130 @@
+name: find_rest
+description: A new Flutter project.
+
+version: 1.0.0+1
+
+environment:
+  sdk: '>=3.1.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  cupertino_icons: ^1.0.2
+
+  # for key-value database
+  hive: ^2.2.3
+  hive_flutter: ^1.1.0
+
+  # for navigation
+  auto_route: ^7.8.2
+
+  # for native Android & iOS splash screen
+  flutter_native_splash: ^2.3.2
+
+  # for updating app's launcher icon.
+  flutter_launcher_icons: ^0.13.1
+
+  # for state management (Business Logic Component)
+  flutter_bloc: ^8.1.3
+
+  # for comparing Objects
+  equatable: ^2.0.5
+
+  # for connect to the Firebase project
+  firebase_core: ^2.15.1
+
+  # for catch errors in Firebase console
+  firebase_crashlytics: ^3.3.5
+
+  # for keeping all text in one place and future localization
+  easy_localization: ^3.0.2
+
+  # for JSON serialization and deserialization
+  json_annotation: ^4.8.1
+
+  # for responsive ui
+  flutter_screenutil: ^5.9.0
+
+  # Code generation for immutable classes that has a simple
+  # syntax/API without compromising on the features.
+  freezed: ^2.4.2
+
+  # for HTTP networking
+  dio: ^5.3.2
+
+  # for dependency injection
+  get_it: ^7.6.0
+
+  # for get_it
+  injectable: ^2.3.0
+
+  # for adobe after effect animation exported as json
+  lottie: ^2.6.0
+
+  # for empty views
+  empty_widget: ^0.0.5
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^2.0.0
+
+  # for auto_route lib generator
+  auto_route_generator: ^7.3.1
+
+  # for hive lib generator
+  hive_generator: ^2.0.1
+
+  # Automatically generate code for converting to and from JSON by annotating Dart classes.
+  json_serializable: ^6.7.1
+
+  # for injectable file gen
+  injectable_generator: ^2.4.0
+
+  # for file generate
+  build_runner:
+
+flutter:
+
+  uses-material-design: true
+
+  assets:
+    - assets/icons/
+    - assets/translations/
+
+  fonts:
+    - family: Manrope
+      fonts:
+        - asset: assets/fonts/Manrope/Manrope-Regular.ttf
+        - asset: assets/fonts/Manrope/Manrope-Medium.ttf
+          weight: 500
+        - asset: assets/fonts/Manrope/Manrope-Bold.ttf
+          weight: 700
+        - asset: assets/fonts/Manrope/Manrope-ExtraBold.ttf
+          weight: 800
+
+# for flutter_native_splash lib, generate command - dart run flutter_native_splash:create
+flutter_native_splash:
+
+  color: "#e1f5fe"
+  image: assets/icons/logo.png
+  color_dark: "#042a49"
+
+  android_12:
+    image: assets/icons/logo.png
+
+    # Splash screen background color.
+    color: "#42a5f5"
+
+    # App icon background color.
+    icon_background_color: "#eeeeee"
+
+fullscreen: true
+
+# for flutter_launcher_icons lib, generate command - flutter pub run flutter_launcher_icons
+flutter_launcher_icons:
+  android: "launcher_icon"
+  ios: true
+  image_path: "assets/icons/logo.png"
+  min_sdk_android: 21

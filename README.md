@@ -35,7 +35,7 @@ flutter pub run flutter_launcher_icons
 ```
 
 ```sh
-3dart run build_runner build --delete-conflicting-outputs
+dart run build_runner build --delete-conflicting-outputs
 ```
 
 Generate splash screen

@@ -1,7 +1,6 @@
 import 'dart:async';
 
 import 'package:easy_localization/easy_localization.dart';
-import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_crashlytics/firebase_crashlytics.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/services.dart';
@@ -9,17 +8,17 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_native_splash/flutter_native_splash.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 
-import 'firebase_options.dart';
 import 'src/core/app.dart';
 import 'src/core/bloc/app_bloc_observer.dart';
 import 'src/core/di/di.dart';
 import 'src/core/enums/flavor.dart';
+import 'src/core/services/firebase_service.dart';
+import 'src/core/services/hive_service.dart';
 import 'src/features/auth/data/models/local/tokens.dart';
 
 Future<void> run({Flavor env = Flavor.PROD}) async {
   await runZonedGuarded<Future<void>>(
     () async {
-      WidgetsFlutterBinding.ensureInitialized();
       final widgetsBinding = WidgetsFlutterBinding.ensureInitialized();
       FlutterNativeSplash.preserve(widgetsBinding: widgetsBinding);
       await SystemChrome.setPreferredOrientations(
@@ -27,11 +26,15 @@ Future<void> run({Flavor env = Flavor.PROD}) async {
           DeviceOrientation.portraitUp,
         ],
       );
+
       await Hive.initFlutter();
-      await initializeFirebase();
+      await FirebaseService.initializeFirebase();
+      await HiveService.initHive();
       await configureDependencies(env);
-      await initHive();
-      Hive.registerAdapter(TokensAdapter());
+
+      Hive.registerAdapter(
+        TokensAdapter(),
+      );
       Bloc.observer = AppBlocObserver();
       runApp(
         EasyLocalization(
@@ -44,7 +47,6 @@ Future<void> run({Flavor env = Flavor.PROD}) async {
           child: App(),
         ),
       );
-      FlutterNativeSplash.remove();
     },
     (error, stackTrace) {
       WidgetsFlutterBinding.ensureInitialized();
@@ -61,17 +63,6 @@ Future<void> run({Flavor env = Flavor.PROD}) async {
       },
     ),
   );
-}
-
-Future<void> initializeFirebase() async {
-  await Firebase.initializeApp(
-    options: DefaultFirebaseOptions.currentPlatform,
-  );
-  FlutterError.onError = FirebaseCrashlytics.instance.recordFlutterError;
-}
-
-Future<void> initHive() async {
-  await Hive.openBox('token');
 }
 
 Future<void> main() async {
